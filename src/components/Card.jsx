@@ -12,7 +12,7 @@ const Card = ({ item }) => {
 
   return (
     <div className="flex flex-col bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl">
-      <Link to={`/coffee/${product_id}`}>
+      <Link to={`/item/${product_id}`}>
         <figure className="relative w-full h-56 overflow-hidden">
           <img
             src={product_image}
@@ -25,7 +25,9 @@ const Card = ({ item }) => {
       <div className="p-4 space-y-3">
         <h2 className="text-lg font-semibold text-gray-800">{product_title}</h2>
         <p className="text-sm text-gray-600">Price: ${price}</p>
-        <button className="btn btn-success">View Details </button>
+        <Link to={`/item/${product_id}`}>
+          <button className="btn btn-success">View Details </button>
+        </Link>
       </div>
     </div>
   );

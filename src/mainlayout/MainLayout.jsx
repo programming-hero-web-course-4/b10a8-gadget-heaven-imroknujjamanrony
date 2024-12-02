@@ -13,7 +13,9 @@ const MainLayout = () => {
         <Outlet></Outlet>
       </div>
       {/* footer */}
-      <Footer></Footer>
+      <div className="mt-52">
+        <Footer></Footer>
+      </div>
     </div>
   );
 };
