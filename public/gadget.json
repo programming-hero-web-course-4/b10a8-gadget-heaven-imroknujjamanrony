@@ -1,0 +1,162 @@
+[
+  {
+    "product_id": 1,
+    "product_title": "Gaming Laptop",
+    "product_image": "https://i.ibb.co.com/MkvZcL0/radek-grzybowski-e-BRTYyjwp-RY-unsplash.jpg",
+    "category": "Computers",
+    "price": 999.99,
+    "description": "High-performance gaming laptop with customizable RGB lighting.",
+    "Specification": [
+      "Intel i7 processor",
+      "16GB RAM",
+      "512GB SSD",
+      "RTX 3060 Graphics Card"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": 2,
+    "product_title": "Ultrabook Laptop",
+    "product_image": "https://i.ibb.co.com/p4kRZCf/lauren-mancke-a-OC7-TSLb1o8-unsplash.jpg",
+    "category": "Computers",
+    "price": 849.99,
+    "description": "Sleek and lightweight ultrabook with a high-resolution display.",
+    "Specification": [
+      "Intel i5 processor",
+      "8GB RAM",
+      "256GB SSD",
+      "13-inch Full HD display"
+    ],
+    "availability": true,
+    "rating": 4.6
+  },
+  {
+    "product_id": 3,
+    "product_title": "Business Laptop",
+    "product_image": "https://i.ibb.co.com/ncJSKqC/fahim-muntashir-a-Ce-Va-v7-OYg-unsplash.jpg",
+    "category": "Computers",
+    "price": 1199.99,
+    "description": "Professional laptop with long battery life and robust security features.",
+    "Specification": [
+      "Intel i7 processor",
+      "16GB RAM",
+      "1TB SSD",
+      "15.6-inch Full HD display"
+    ],
+    "availability": false,
+    "rating": 4.7
+  },
+  {
+    "product_id": 4,
+    "product_title": "2-in-1 Convertible Laptop",
+    "product_image": "https://i.ibb.co.com/Lrvdq3r/desola-lanre-ologun-t-Wjzm-NXKup4-unsplash.jpg",
+    "category": "Computers",
+    "price": 1049.99,
+    "description": "Convertible laptop with a 360-degree hinge and touchscreen display.",
+    "Specification": [
+      "Intel i5 processor",
+      "8GB RAM",
+      "512GB SSD",
+      "14-inch touchscreen"
+    ],
+    "availability": true,
+    "rating": 4.5
+  },
+  {
+    "product_id": 5,
+    "product_title": "Budget Laptop",
+    "product_image": "https://i.ibb.co.com/3C3rwWc/sahej-brar-U6-UG7-CPZM80-unsplash.jpg",
+    "category": "Computers",
+    "price": 549.99,
+    "description": "Affordable laptop suitable for everyday tasks and browsing.",
+    "Specification": [
+      "Intel i3 processor",
+      "4GB RAM",
+      "256GB SSD",
+      "15.6-inch display"
+    ],
+    "availability": true,
+    "rating": 4.2
+  },
+  {
+    "product_id": 6,
+    "product_title": "High-End Desktop PC",
+    "product_image": "https://i.ibb.co.com/C2P6dMx/anthony-choren-Xuq8-Qm-PFCnk-unsplash.jpg",
+    "category": "Computers",
+    "price": 1499.99,
+    "description": "Powerful desktop PC for gaming and content creation.",
+    "Specification": [
+      "AMD Ryzen 9 processor",
+      "32GB RAM",
+      "1TB SSD + 2TB HDD",
+      "RTX 3080 Graphics Card"
+    ],
+    "availability": false,
+    "rating": 4.9
+  },
+  {
+    "product_id": 7,
+    "product_title": "Smart Watch Pro",
+    "product_image": "https://i.ibb.co.com/kS8J4t3/wallpaperflare-com-wallpaper-4.jpg",
+    "category": "Smart Watches",
+    "price": 249.99,
+    "description": "Advanced smartwatch with health tracking and GPS.",
+    "Specification": [
+      "GPS tracking",
+      "Heart rate monitor",
+      "Voice assistant",
+      "Water-resistant up to 50m"
+    ],
+    "availability": true,
+    "rating": 4.9
+  },
+  {
+    "product_id": 8,
+    "product_title": "Fitness Tracker Watch",
+    "product_image": "https://i.ibb.co.com/zSjbs2T/wallpaperflare-com-wallpaper-5.jpg",
+    "category": "Smart Watches",
+    "price": 129.99,
+    "description": "Lightweight fitness tracker with activity and sleep monitoring.",
+    "Specification": [
+      "24/7 heart rate monitor",
+      "Sleep tracking",
+      "Steps and calorie counter",
+      "Water-resistant"
+    ],
+    "availability": true,
+    "rating": 4.4
+  },
+  {
+    "product_id": 9,
+    "product_title": "Portable Power Bank 10000mAh",
+    "product_image": "https://i.ibb.co.com/Zftnjjk/ugreen-145w-25000mah-power-bank-1.webp",
+    "category": "Power Banks",
+    "price": 59.99,
+    "description": "Compact power bank with fast charging capability.",
+    "Specification": [
+      "10000mAh capacity",
+      "Dual USB ports",
+      "Fast charge supported",
+      "LED battery indicator"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": 10,
+    "product_title": "High-Capacity Power Bank 20000mAh",
+    "product_image": "https://i.ibb.co.com/wJBCNWG/Power-Bank-11zon.jpg",
+    "category": "Power Banks",
+    "price": 79.99,
+    "description": "High-capacity power bank with multiple charging ports.",
+    "Specification": [
+      "20000mAh capacity",
+      "Triple USB ports",
+      "Fast charge",
+      "LED display"
+    ],
+    "availability": false,
+    "rating": 4.8
+  }
+]
