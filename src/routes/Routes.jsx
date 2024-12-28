@@ -5,6 +5,7 @@ import Statistic from "../pages/Statistic";
 import Dashboard from "../pages/Dashboard";
 import DataCards from "../components/DataCards";
 import ItemDetails from "../components/ItemDetails";
+import Error from "../components/Error";
 // import Banner from "../components/Banner";
 
 const routes = createBrowserRouter([
@@ -43,6 +44,10 @@ const routes = createBrowserRouter([
         loader: () => fetch("/public/gadget.json"),
       },
     ],
+  },
+  {
+    path: "*",
+    element: <Error></Error>,
   },
 ]);
 

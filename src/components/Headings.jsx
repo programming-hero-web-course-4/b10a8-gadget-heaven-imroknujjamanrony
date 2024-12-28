@@ -1,3 +1,4 @@
+// eslint-disable-next-line react/prop-types
 const Headings = ({ title }) => {
   return (
     <div className="flex justify-center items-baseline">
