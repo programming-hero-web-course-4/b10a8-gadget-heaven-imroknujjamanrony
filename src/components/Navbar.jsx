@@ -1,8 +1,10 @@
 import { NavLink } from "react-router-dom";
-const Navbar = () => {
+import { useState } from "react";
+
+const Navbar = ({ setDashboardTab }) => {
   return (
-    <div className="bg-[#9538E2]  relative">
-      <div className="navbar   items-start container mx-auto">
+    <div className="bg-[#9538E2] relative">
+      <div className="navbar items-start container mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -26,7 +28,7 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               <NavLink className="text-[#FFFFFF]" to="/statistic">
-                Statatistic
+                Statistic
               </NavLink>
               <NavLink className="text-[#FFFFFF]" to="/home">
                 Home
@@ -53,18 +55,20 @@ const Navbar = () => {
             </NavLink>
           </ul>
         </div>
-        <div className="navbar-end gap-4 ">
+        <div className="navbar-end gap-4">
           <NavLink
             className="w-8 h-8 bg-white rounded-3xl flex justify-center items-center"
-            to="/home"
+            to="/dashboard"
+            onClick={() => setDashboardTab("cart")}
           >
-            <i className="fa-solid fa-cart-shopping"></i>{" "}
+            <i className="fa-solid fa-cart-shopping"></i>
           </NavLink>
           <NavLink
             className="w-8 h-8 bg-white rounded-3xl flex justify-center items-center"
-            to="/home"
+            to="/dashboard"
+            onClick={() => setDashboardTab("wishlist")}
           >
-            <i className="fa-regular fa-heart"></i>{" "}
+            <i className="fa-regular fa-heart"></i>
           </NavLink>
         </div>
       </div>
