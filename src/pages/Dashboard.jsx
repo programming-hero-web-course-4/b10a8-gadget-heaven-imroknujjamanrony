@@ -33,10 +33,10 @@ const Dashboard = () => {
   const totalPrice = cart.reduce((acc, item) => acc + item.price, 0).toFixed(2);
 
   return (
-    <div className="mt-8 mx-auto max-w-4xl">
-      <div className="text-center mb-6">
-        <h1 className="text-3xl font-bold text-purple-600">Dashboard</h1>
-        <p className="text-gray-600">
+    <div className="mt-8 mx-auto max-w-4xl bg-purple-600">
+      <div className="text-center mb-6 pt-8">
+        <h1 className="text-3xl font-bold text-white ">Dashboard</h1>
+        <p className="text-white py-2">
           Explore the latest gadgets that will take your experience to the next
           level. From smart devices to the coolest accessories, we have it all!
         </p>
