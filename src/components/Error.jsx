@@ -7,3 +7,5 @@ const Error = () => {
 };
 
 export default Error;
+
+//go back to home

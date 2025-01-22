@@ -6,6 +6,7 @@ import Dashboard from "../pages/Dashboard";
 import DataCards from "../components/DataCards";
 import ItemDetails from "../components/ItemDetails";
 import Error from "../components/Error";
+import About from "../pages/About";
 // import Banner from "../components/Banner";
 
 const routes = createBrowserRouter([
@@ -23,6 +24,7 @@ const routes = createBrowserRouter([
             element: <DataCards></DataCards>,
             loader: () => fetch("/public/gadget.json"),
           },
+
           {
             path: "/category/:category",
             element: <DataCards></DataCards>,
@@ -35,6 +37,10 @@ const routes = createBrowserRouter([
         element: <Statistic></Statistic>,
       },
       {
+        path: "/about",
+        element: <About></About>,
+      },
+      {
         path: "/dashboard",
         element: <Dashboard></Dashboard>,
       },
@@ -45,6 +51,7 @@ const routes = createBrowserRouter([
       },
     ],
   },
+
   {
     path: "*",
     element: <Error></Error>,

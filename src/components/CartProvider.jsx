@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from "react";
+import Swal from "sweetalert2";
 
 export const CartContext = createContext();
 
@@ -24,6 +25,21 @@ const CartProvider = ({ children }) => {
   const addToCart = (item) => {
     if (!cart.some((cartItem) => cartItem.product_id === item.product_id)) {
       setCart([...cart, item]);
+      Swal.fire({
+        title: "Added to Cart!",
+        text: `${item.product_title} has been successfully added to your cart.`,
+        icon: "success",
+        confirmButtonText: "OK",
+        confirmButtonColor: "#6366f1",
+      });
+    } else {
+      Swal.fire({
+        title: "Item Already in Cart!",
+        text: `${item.product_title} is already in your cart.`,
+        icon: "info",
+        confirmButtonText: "OK",
+        confirmButtonColor: "#6366f1",
+      });
     }
   };
 
@@ -41,6 +57,17 @@ const CartProvider = ({ children }) => {
     setWishlist(wishlist.filter((item) => item.product_id !== id));
   };
 
+  const clearCart = () => {
+    setCart([]);
+    Swal.fire({
+      title: "Cart Cleared!",
+      text: "Your cart has been emptied.",
+      icon: "success",
+      confirmButtonText: "OK",
+      confirmButtonColor: "#6366f1",
+    });
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -50,6 +77,7 @@ const CartProvider = ({ children }) => {
         addToWishlist,
         removeFromCart,
         removeFromWishlist,
+        clearCart,
       }}
     >
       {children}

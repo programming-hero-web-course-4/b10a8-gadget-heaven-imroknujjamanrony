@@ -67,6 +67,16 @@ const Navbar = ({ setDashboardTab }) => {
                     isActive ? "bg-blue-500 text-white" : "text-black"
                   }`
                 }
+                to="/about"
+              >
+                About
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  `rounded-full px-4 py-2 ${
+                    isActive ? "bg-blue-500 text-white" : "text-black"
+                  }`
+                }
                 to="/dashboard"
               >
                 Dashboard
@@ -108,6 +118,16 @@ const Navbar = ({ setDashboardTab }) => {
               to="/dashboard"
             >
               Dashboard
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                `rounded-full px-4 py-2 ${
+                  isActive ? "bg-blue-500 text-white" : "text-black"
+                }`
+              }
+              to="/about"
+            >
+              About
             </NavLink>
           </ul>
         </div>

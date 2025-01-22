@@ -1,48 +1,66 @@
 import { useContext, useState, useEffect } from "react";
 import { CartContext } from "../components/CartProvider";
 import { FaTrash } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Dashboard = () => {
-  const { cart, wishlist, removeFromCart, removeFromWishlist } =
+  const { cart, wishlist, removeFromCart, removeFromWishlist, clearCart } =
     useContext(CartContext);
+  const navigate = useNavigate();
 
-  // State for active tab: cart or wishlist
   const [activeTab, setActiveTab] = useState("cart");
-
-  // State to keep track of sorted cart
   const [sortedCart, setSortedCart] = useState([]);
-  const [showModal, setShowModal] = useState(false);
 
-  // Sync cart with sortedCart
   useEffect(() => {
     setSortedCart(cart);
   }, [cart]);
 
-  // Sort by price
   const sortByPrice = () => {
     const sorted = [...sortedCart].sort((a, b) => b.price - a.price);
     setSortedCart(sorted);
   };
 
-  // Handle purchase button click
   const handlePurchase = () => {
-    setShowModal(true);
+    if (cart.length === 0) {
+      Swal.fire({
+        title: "Cart is Empty!",
+        text: "Please add items to your cart before purchasing.",
+        icon: "warning",
+        confirmButtonText: "OK",
+        confirmButtonColor: "#6366f1",
+      });
+      return;
+    }
+
+    Swal.fire({
+      title: "Payment Successful!",
+      text: `Your total purchase cost is $${totalPrice}. Thank you for your purchase!`,
+      icon: "success",
+      confirmButtonText: "OK",
+      confirmButtonColor: "#6366f1",
+    }).then(() => {
+      clearCart();
+      navigate("/");
+    });
   };
 
-  // Calculate total cart price
   const totalPrice = cart.reduce((acc, item) => acc + item.price, 0).toFixed(2);
 
   return (
-    <div className="mt-8 mx-auto max-w-4xl bg-purple-600">
+    <div className="mt-8 mx-auto px-8 py-4 max-w-6xl bg-purple-600">
+      <Helmet>
+        <title>Dashboard - Gadget Heaven</title>
+      </Helmet>
       <div className="text-center mb-6 pt-8">
-        <h1 className="text-3xl font-bold text-white ">Dashboard</h1>
+        <h1 className="text-3xl font-bold text-white">Dashboard</h1>
         <p className="text-white py-2">
           Explore the latest gadgets that will take your experience to the next
           level. From smart devices to the coolest accessories, we have it all!
         </p>
       </div>
 
-      {/* Tabs for Cart and Wishlist */}
       <div className="flex justify-center gap-4 mb-4">
         <button
           onClick={() => setActiveTab("cart")}
@@ -64,7 +82,6 @@ const Dashboard = () => {
         </button>
       </div>
 
-      {/* Cart Items */}
       {activeTab === "cart" && (
         <>
           <div className="flex justify-between items-center mb-4">
@@ -78,7 +95,12 @@ const Dashboard = () => {
               </button>
               <button
                 onClick={handlePurchase}
-                className="px-4 py-2 bg-green-500 text-white rounded-md"
+                className={`px-4 py-2 bg-green-500 text-white rounded-md ${
+                  cart.length === 0 || totalPrice === "0.00"
+                    ? "opacity-50 cursor-not-allowed"
+                    : ""
+                }`}
+                disabled={cart.length === 0 || totalPrice === "0.00"}
               >
                 Purchase
               </button>
@@ -112,7 +134,6 @@ const Dashboard = () => {
         </>
       )}
 
-      {/* Wishlist Items */}
       {activeTab === "wishlist" &&
         wishlist.map((item) => (
           <div
@@ -130,34 +151,15 @@ const Dashboard = () => {
                 <p className="text-gray-600">{item.description}</p>
                 <p className="font-bold text-purple-500">${item.price}</p>
               </div>
+              <button
+                onClick={() => removeFromWishlist(item.product_id)}
+                className="text-red-500 hover:text-red-700"
+              >
+                <FaTrash size={20} />
+              </button>
             </div>
-            <button
-              onClick={() => removeFromWishlist(item.product_id)}
-              className="text-red-500 hover:text-red-700"
-            >
-              <FaTrash size={20} />
-            </button>
           </div>
         ))}
-
-      {/* Purchase Modal */}
-      {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-          <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full">
-            <h2 className="text-2xl font-bold text-green-500 mb-4">
-              Payment Successful!
-            </h2>
-            <p className="mb-4 text-gray-700">Thank you for your purchase!</p>
-            <p className="mb-4 text-gray-800 font-bold">Total: ${totalPrice}</p>
-            <button
-              onClick={() => setShowModal(false)}
-              className="px-4 py-2 bg-purple-600 text-white rounded-md w-full"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
