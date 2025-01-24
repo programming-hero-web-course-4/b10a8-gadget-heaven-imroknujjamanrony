@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div>
       <Helmet>
-        <title>Home - Gadget Heaven</title>
+        <title>Home - Gadget Heaven75</title>
       </Helmet>
       {/* banner */}
       <Banner></Banner>
@@ -29,3 +29,4 @@ const Home = () => {
 };
 
 export default Home;
+//

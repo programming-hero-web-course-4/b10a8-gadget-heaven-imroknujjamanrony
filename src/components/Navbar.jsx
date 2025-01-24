@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+import logo from "../assets/favicon-16x16.png";
 import { NavLink, useLocation } from "react-router-dom";
 import { useState } from "react";
 
@@ -84,6 +86,7 @@ const Navbar = ({ setDashboardTab }) => {
             </ul>
           </div>
           <NavLink to="/" className="btn btn-ghost text-black text-xl">
+            <img src={logo} alt="" />
             Gadget Heaven
           </NavLink>
         </div>
@@ -135,14 +138,14 @@ const Navbar = ({ setDashboardTab }) => {
           <NavLink
             className="w-8 h-8 bg-white rounded-full flex justify-center items-center"
             to="/dashboard"
-            onClick={() => setDashboardTab("cart")}
+            // onClick={() => setDashboardTab("cart")}
           >
             <i className="fa-solid fa-cart-shopping"></i>
           </NavLink>
           <NavLink
             className="w-8 h-8 bg-white rounded-full flex justify-center items-center"
             to="/dashboard"
-            onClick={() => setDashboardTab("wishlist")}
+            // onClick={() => setDashboardTab("wishlist")}
           >
             <i className="fa-regular fa-heart"></i>
           </NavLink>
